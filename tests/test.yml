@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
-  remote_user: root
   roles:
-    - beats
+    - role: role_under_test
+      products:
+        - filebeat
+        - metricbeat

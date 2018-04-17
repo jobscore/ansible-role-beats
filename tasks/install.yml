@@ -1,0 +1,15 @@
+---
+
+- set_fact:
+    package: "{{ item }}"
+
+- name: "Ensure {{ package }} is installed"
+  apt:
+    name: "{{ package }}={{ beats_ver }}"
+    state: present
+
+- name: "Ensure {{ package }} is started and enabled on startup"
+  service:
+    name: "{{ package }}"
+    state: started
+    enabled: yes
