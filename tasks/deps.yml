@@ -29,4 +29,4 @@
 - name: Update cache if needed
   apt:
     update_cache: yes
-  when: apt_repos|changed or apt_keys|changed
+  when: apt_repos is changed or apt_keys is changed
