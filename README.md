@@ -2,13 +2,11 @@ Role Name
 =========
 
 This role installs [Beats](https://www.elastic.co/products/beats) products on a Ubuntu machine.
+
 This role is capable of installing *all* beats products available as deb packages. However, for configuring beats products (e.g filebeat.yml, metricbeat.yml) the only supported products so far are:
 
 - filebeat
 - metricbeat
-
-But it might work with other products as well.
-
 
 Requirements
 ------------
