@@ -1,7 +1,12 @@
 ---
 
-- set_fact:
+- name: Configuting new package
+  set_fact:
     package: "{{ item }}"
+
+- name: Getting package configuration
+  set_fact:
+  package_config: "{{ package }}_config"
 
 - name: "Ensure {{ package }} is installed"
   apt:
@@ -13,3 +18,18 @@
     name: "{{ package }}"
     state: started
     enabled: true
+
+- name: "Ensure that the {{ package }} configuration is present"
+  template:
+    src: config.j2
+    dest: "/etc/{{ package }}/{{ package }}.yml"
+    backup: true
+    validate: "{{ package }} test /etc/{{ package }}/{{ package }}.yml"
+  register: config
+  when: package_config is defined
+
+- name: "Ensure {{ package }} is restarted"
+  service:
+    name: "{{ package }}"
+    state: restarted
+  when: config is changed
