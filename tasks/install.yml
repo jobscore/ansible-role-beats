@@ -6,7 +6,7 @@
 
 - name: Getting package configuration
   set_fact:
-  package_config: "{{ package }}_config"
+    package_config: "{{ package }}_config"
 
 - name: "Ensure {{ package }} is installed"
   apt:
@@ -23,8 +23,7 @@
   template:
     src: config.j2
     dest: "/etc/{{ package }}/{{ package }}.yml"
-    backup: true
-    validate: "{{ package }} test /etc/{{ package }}/{{ package }}.yml"
+    validate: "{{ package }} test %s"
   register: config
   when: package_config is defined
 
