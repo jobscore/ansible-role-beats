@@ -6,13 +6,17 @@
 
 - name: Getting filebeat configuration
   set_fact:
-    package_config: {{ filebeat_config }}
-  when: filebeat_config is defined
+    package_config: "{{ filebeat_config }}"
+  when:
+    - filebeat_config is defined
+    - package == "filebeat"
 
 - name: Getting metricbeat configuration
   set_fact:
-    package_config: {{ metricbeat_config }}
-  when: metricbeat_config is defined
+    package_config: "{{ metricbeat_config }}"
+  when:
+    - metricbeat_config is defined
+    - package == "metricbeat"
 
 - name: "Ensure {{ package }} is installed"
   apt:
