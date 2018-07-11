@@ -1,7 +1,7 @@
 ---
 - name: Converge
   hosts: all
-  becume: true
+  become: true
   roles:
     - role: ansible-role-beats
       products:
