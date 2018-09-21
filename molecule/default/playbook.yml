@@ -1,7 +1,8 @@
 ---
-- hosts: localhost
+- name: Converge
+  hosts: all
   roles:
-    - role: role_under_test
+    - role: ansible-role-beats
       products:
         - filebeat
         - metricbeat

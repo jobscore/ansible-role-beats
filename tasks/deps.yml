@@ -1,6 +1,7 @@
+---
 - name: Ensure APT cache is update
   apt:
-    update_cache: yes
+    update_cache: true
     cache_valid_time: 300
 
 - name: Ensure needed packages are installed
@@ -24,9 +25,9 @@
     state: present
   register: apt_repos
   with_items:
-    -  "deb https://artifacts.elastic.co/packages/{{ beats_ver[0] }}.x/apt stable main"
+    - "deb https://artifacts.elastic.co/packages/{{ beats_ver[0] }}.x/apt stable main"
 
 - name: Update cache if needed
   apt:
-    update_cache: yes
+    update_cache: true
   when: apt_repos is changed or apt_keys is changed
