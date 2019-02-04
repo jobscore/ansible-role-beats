@@ -6,6 +6,7 @@ jobs:
         version: 2.7
       services:
         - docker
+    working_directory: ~/ansible-role-beats    
     steps:
       - checkout
       - run:
