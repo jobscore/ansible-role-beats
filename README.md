@@ -1,5 +1,6 @@
-Role Name
+Filebeat agent
 =========
+[![CircleCI](https://circleci.com/gh/GSA/ansible-role-beats.svg?style=svg)](https://circleci.com/gh/GSA/ansible-role-beats)
 
 This role installs [Beats](https://www.elastic.co/products/beats) products on a Ubuntu machine.
 
