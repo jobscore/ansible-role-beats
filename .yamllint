@@ -13,4 +13,4 @@ rules:
   # truthy: disable
 ignore: |
   .travis.yml
-  /.circleci/config.yml
+  config.yml
