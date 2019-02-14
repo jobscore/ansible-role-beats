@@ -44,12 +44,6 @@
   register: config
   when: package_config is defined
 
-- name: Preinstall Filebeat Modules
-  command: "filebeat modules enable system auditd redis nginx apache2"
-  when:
-    - filebeat_config is defined
-    - package == "filebeat" 
-
 - name: "Ensure {{ package }} is restarted"
   service:
     name: "{{ package }}"

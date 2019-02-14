@@ -4,10 +4,4 @@ before_script:
   - pip install pipenv
   - pipenv install --dev --system
 script:
-  - molecule test
-notifications:
-  email: false
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
-  slack:
-    rooms:
-      secure: ksivh3o5tgJE4vUfDhTFXnW+fgpqQyLCMbH7K2Okd9gAGADPLTKrx+Uv8DQrWDlFCXsJhBEh29r4s4xlhRQ8IwYGgMkrrrp7oyzxJDJ9cuNheQNxJfyECfidlkjRfWRWaZHGTf6SKeYNwtneF6CXwGTTdPNOmVltN2rbJ8ds4M2CeMOmSRfWhSLpah8FmbTrS3MZVa/ozh1DEMffswttiGlsQ6O+W7565oRaUf6zGw/IAOusvag5kbZBKMUr7QR0KBz7mMX5dGwqfXrEbVgcUcBZmNbdCJyoqewLfz3l2MsfSPOFw1M/tFDhZ+uDQ20iCgOWcqZoNiUT1gbsuc8CwZXdl/M7oo2LNiX9BxMzQyVkPcB11VqOu06k+Y/wKA/Ge9dsKghYFBbo/JapMfpazdrP/aOODbLfbHf4rVtGMKV2Dnsj85v7lfRNm8Ju64vdAbKoCalH7df8vWu9rq+oTN+zWMjbW0qXzvzUfjzS85kbx7hCKjQru1vpUXdhNpVAko/DdtdTv3YcVUywy7GBCCnnl3lQhThfCpvDQmmOhNmxJsvd3f+7ZJK2tsThsgjNfWjdZwpXFGdQAjcqT6YDiWWPaIoiUDb47xJWPnOzGL4G4PjSp9L9eA89RAKJsRj5ZjEiXJNfW2jxXONFqJbAWPydg6dmXtrFs7Xtyg74BLE=
+  - pipenv run test
