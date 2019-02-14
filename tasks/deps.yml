@@ -6,10 +6,8 @@
 
 - name: Ensure needed packages are installed
   apt:
-    name: "{{ item }}"
+    name: "apt-transport-https"
     state: present
-  with_items:
-    - apt-transport-https
 
 - name: Ensure that extra keys are present
   apt_key:

@@ -18,6 +18,13 @@
     - metricbeat_config is defined
     - package == "metricbeat"
 
+- name: Getting heartbeat configuration
+  set_fact:
+    package_config: "{{ heartbeat_config }}"
+  when:
+    - heartbeat_config is defined
+    - package == "heartbeat"
+
 - name: "Ensure {{ package }} is installed"
   apt:
     name: "{{ package }}={{ beats_ver }}"
@@ -36,6 +43,12 @@
     validate: "{{ package }} test %s"
   register: config
   when: package_config is defined
+
+- name: Preinstall Filebeat Modules
+  command: "filebeat modules enable system auditd redis nginx apache2"
+  when:
+    - filebeat_config is defined
+    - package == "filebeat" 
 
 - name: "Ensure {{ package }} is restarted"
   service:

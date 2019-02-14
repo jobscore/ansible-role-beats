@@ -6,10 +6,12 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: xenial
-    image: ubuntu:xenial
   - name: trusty
     image: ubuntu:trusty
+  - name: xenial
+    image: ubuntu:xenial
+  - name: bionic
+    image: ubuntu:bionic
 provisioner:
   name: ansible
   lint:

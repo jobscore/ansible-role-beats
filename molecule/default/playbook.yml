@@ -5,4 +5,21 @@
     - role: ansible-role-beats
       products:
         - filebeat
-        - metricbeat
+        #- metricbeat
+        #- heartbeat
+      vars:
+        filebeat_config:
+          filebeat.config.modules:
+            enabled: true
+            path: ${path.config}/modules.d/*.yml    
+          filebeat.modules:
+            - module: system
+              syslog:
+                enabled: true
+            #- module: auditd
+            #  auditd:
+            #    enabled: true
+          output.console:
+            enabled: true        
+  #        output.logstash:
+  #          hosts: ["{{ vault.secops_logstash_output }}"]
