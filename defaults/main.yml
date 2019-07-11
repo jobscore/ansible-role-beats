@@ -1,6 +1,6 @@
 ---
 # defaults file for beats
 
-beats_ver: 6.2.2
-
-products: []
+beats_ver: 6.7.2
+beats_hold_products: true
+beats_products: []

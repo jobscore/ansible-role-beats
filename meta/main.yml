@@ -8,17 +8,14 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - trusty
+        - bionic
         - xenial
   galaxy_tags:
     - beats
     - elasticsearch
-    - ELK
+    - elk
     - kibana
     - logstash
     - filebeat
     - metricbeat
-    - packetbeat
-    - auditbeat
-    - heartbeat
 dependencies: []
