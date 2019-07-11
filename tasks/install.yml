@@ -36,3 +36,9 @@
     validate: "{{ package }} test %s"
   notify: "restart {{ package }}"
   when: package_config is defined
+
+- name: "Ensure {{ package }} is kept in the same version"
+  dpkg_selections:
+    name: "{{ package }}"
+    selection: hold
+  when: beats_hold_products | bool
