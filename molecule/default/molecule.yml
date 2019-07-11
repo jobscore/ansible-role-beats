@@ -8,8 +8,8 @@ lint:
 platforms:
   - name: xenial
     image: ubuntu:xenial
-  - name: trusty
-    image: ubuntu:trusty
+  - name: bionic
+    image: ubuntu:bionic
 provisioner:
   name: ansible
   lint:

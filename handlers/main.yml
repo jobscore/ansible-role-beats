@@ -1,2 +1,12 @@
 ---
 # handlers file for beats
+
+- name: restart metricbeat
+  service:
+    name: metricbeat
+    state: restarted
+
+- name: restart filebeat
+  service:
+    name: filebeat
+    state: restarted
