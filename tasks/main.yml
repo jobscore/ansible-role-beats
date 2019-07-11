@@ -1,11 +1,17 @@
 ---
 # tasks file for beats
 
-- include_tasks: deps.yml
-  tags:
-    - beats-install
+- name: Set beats_products (legacy)
+  set_fact:
+    beats_products: "{{ products }}"
+  when: products is defined
+
+- name: Set beats_version (legacy)
+  set_fact:
+    beats_version: "{{ beats_ver }}"
+  when: beats_ver is defined
+
+- include: deps.yml
 
 - include_tasks: install.yml
-  with_items: "{{ products }}"
-  tags:
-    - beats-install
+  with_items: "{{ beats_products }}"
