@@ -20,7 +20,7 @@
 
 - name: "Ensure {{ package }} is installed"
   apt:
-    name: "{{ package }}={{ beats_ver }}"
+    name: "{{ package }}={{ beats_version }}"
     state: present
 
 - name: "Ensure {{ package }} is started and enabled on startup"
